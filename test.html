@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --main-color-text: #FFFFFF;
+      --light-grey: #BABABA;
+      --second-color-background: #19191B;
+      --main-blue: #2589ff;
+    }
+
+    *, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    }
+
+    html {
+      font-size: 22px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -webkit-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      transition: all 0.3s linear;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .tools {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      padding: 20px 0;
+      background-color: #111;
+    }
+
+    .tools-inline {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      height: 3em;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-animation: 20s linear 0s infinite marquee;
+      animation: scroll-left 100s linear infinite;
+      gap: 50px
+    }
+
+    .tools-inline div {
+      font-size: 2.2rem;
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .tools-inline img {
+      max-height: 50px;
+      display: block;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+
+    .blue {
+      color: #0B68F0;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .services {
+      background-color: #111;
+    }
+
+    .services-title {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      max-width: 1350px;
+      margin: 100px auto;
+      padding: 0 40px;
+    }
+
+    .services h1 {
+      font-weight: 700;
+      font-size: 94px;
+      font-family: 'Montserrat';
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .services p {
+      max-width: 65%;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .services-nav {
+      margin: 0 60px 0 auto;
+      height: 90px;
+    }
+
+    .swiper-buttons-container {
+      max-width: 7em;
+      display: block;
+      position: relative;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      transition: transform 0.1s ease-in-out,
+                  filter 0.1s ease-in-out,
+                  opacity 0.15s ease-in-out;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      transform: scale(1.1);
+      filter: brightness(0.5);
+    }
+
+    .swiper-button-next:active,
+    .swiper-button-prev:active {
+      transform: scale(0.9);
+    }
+
+    .swiper-buttons-container div:nth-child(1) {
+      padding: .9em 1.1em .9em 0.9em;
+    }
+
+    .swiper-buttons-container div:nth-child(2) {
+      padding: .9em 0.9em .9em 1.1em;
+    }
+
+    .services-slider {
+      width: 30%;
+      min-width: 500px;
+      margin: 0 auto 0 70px;
+    }
+
+    .services__container {
+      max-width: 100vw;
+      overflow: hidden;
+    }
+
+    .services__nav{
+      margin: 0 60px 0 auto;
+      height: 90px;
+    }
+    .services__nav .swiper-button-prev,.services__nav .swiper-button-next{
+      text-rendering: auto;
+    }
+
+    .services__nav .swiper-button-prev, .services__nav .swiper-button-next {
+      display: flex;
+    }
+    @media (max-width: 800px) {
+      .services__nav{
+        margin: 0 15px 0 auto;
+        height: 60px;
+        max-width: 120px;
+      }
+      .services__nav .swiper-button-prev, .services__nav .swiper-button-next {
+        top: 25px;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .section-title_services-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      max-width: 1350px;
+      margin: 0 auto;
+    }
+
+    .section-title_services-info {
+      max-width: 65%;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5em;
+    }
+
+    .services-list__container {
+      width: 30%;
+      min-width: 500px;
+      margin: 0 auto 60px 70px;
+    }
+    @media screen and (max-width: 1300px) {
+      .services-list__container {
+        margin-left: 15px;
+      }
+    }
+    .services-list {
+      margin: 2em 0 0;
+    }
+
+    .services-list__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 2em 1em;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    .services-list__item.swiper-slide-active {
+      border-top: var(--main-blue) 1px solid;
+      border-bottom: var(--main-blue) 1px solid;
+    }
+
+    .services-list__item:not(.swiper-slide-active) {
+      border: 1px solid transparent;
+    }
+
+    .services-list__item:not(.swiper-slide-active) .services-sublist {
+      color: var(--light-grey);
+    }
+
+    .services-list__item:not(.swiper-slide-active) ul.services-sublist li:before {
+      content: '';
+    }
+
+    .services-list__item:not(.swiper-slide-active) .services-list__details {
+      display: none;
+    }
+
+    .services-list__item:not(.swiper-slide-active) .services-list__link {
+      display: none;
+    }
+
+    .services-list__item:not(.swiper-slide-active):hover {
+      border-top: var(--main-blue) 1px solid;
+      border-bottom: var(--main-blue) 1px solid;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+
+    .services-list__item:not(.swiper-slide-active):hover .services-sublist {
+      color: var(--main-color-text);
+    }
+
+    .services-list__item:not(.swiper-slide-active):hover
+      ul.services-sublist
+      li:before {
+      content: '/';
+    }
+
+    .services-list__item:not(.swiper-slide-active):hover .services-list__details {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .services-list__item:not(.swiper-slide-active):hover .services-list__link {
+      display: block;
+    }
+
+    .services-list__item.swiper-slide {
+      height: auto;
+    }
+
+    .services-list__item:not(.swiper-slide-active), .roi-etaps-item:not(.swiper-slide-active) {
+      background-color: var(--second-color-background);
+    }
+
+    .swiper-slide:hover {
+      cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 2 2"%3E%3Ccircle cx="1" cy="1" r="1" fill="%230B68F0" /%3E%3C/svg%3E') 1 1, auto;
+    }
+
+    .services-list__heading {
+      display: block;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .services-list__title-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    .services-list__link {
+      padding: 0 2.5em 2em 0;
+      color: var(--main-color-text);
+      background-color: transparent;
+      background-image: url(img/form-arrow.svg);
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: start;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.5em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+    .services-list__link:hover {
+      padding: 0 4em 2em 0;
+    }
+
+    .services-list__title {
+      font-size: 42px;
+      font-weight: 400;
+      max-width: 65%;
+      margin: 0;
+    }
+
+    .services-sublist {
+      min-height: 17em;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: end;
+    }
+
+    .services-sublist li,
+    ul.cases-res-icons li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-weight: 400;
+      list-style-position: inside;
+    }
+
+    .services-sublist li:not(:last-child),
+    .case-main-content ul li {
+      margin-bottom: 1.5em;
+    }
+
+    ul.services-sublist li:before,
+    ul.cases-res-icons li:before {
+      content: '/';
+      color: var(--main-blue);
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      margin-right: 0.5em;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+    }
+
+    .services-list__details {
+      margin: 1em 0em;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    .services-list__price {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.5em;
+    }
+
+    .services-list__btn {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--main-blue);
+      line-height: 1.2em;
+      font-weight: 600;
+    }
+
+    .services-list__btn:after {
+      content: url('../img/arrow-right-blue.svg');
+      display: block;
+      margin-left: 8px;
+      width: 17px;
+      height: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .services-title {
+        flex-direction: column;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .services-title h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+
+      .services-title p {
+        max-width: 100%;
+        font-size: 18px;
+      }
+
+      .services-slider {
+        margin-left: 0;
+      }
+
+      .services-list__container {
+        min-width: 90vw;
+    
+      }
+
+      .services-list__title {
+        font-size: 1rem;
+      }
+
+      .services-list__price {
+        font-size: .65rem;
+      }
+
+      .services-sublist,
+      .services-list__link {
+        font-size: .6rem;
+      }
+
+      .tools-inline div {
+        font-size: .65rem;
+      }
+
+      .tools-inline  {
+        gap: 20px
+      }
+
+      .services-nav {
+        margin: 0 auto;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+
+    <!-- Первый бесконечный блок -->
+    <section class="tools">
+      <div class="tools-inline">
+        <div class="blue">используем множество инструментов</div>
+        <div><img src="img/figma-logo.svg" alt="Figma"></div>
+        <div><img src="img/google-ads-logo.svg" alt="Google Ads"></div>
+        <div><img src="img/google-analytics-logo.svg" alt="Google Analytics"></div>
+        <div><img src="img/key-collector-logo.svg" alt="Key Collector"></div>
+        <div><img src="img/roistat-logo.svg" alt="Roistat"></div>
+        <div><img src="img/seranking-logo.svg" alt="SERanking"></div>
+        <div><img src="img/serpstat-logo.svg" alt="Serpstat"></div>
+        <div><img src="img/yandex-direct-logo.svg" alt="Яндекс Директ"></div>
+        <div><img src="img/yandex-metrika-logo.svg" alt="Яндекс Метрика"></div>
+        <div class="blue">используем множество инструментов</div>
+        <div><img src="img/figma-logo.svg" alt="Figma"></div>
+        <div><img src="img/google-ads-logo.svg" alt="Google Ads"></div>
+        <div><img src="img/google-analytics-logo.svg" alt="Google Analytics"></div>
+        <div><img src="img/key-collector-logo.svg" alt="Key Collector"></div>
+        <div><img src="img/roistat-logo.svg" alt="Roistat"></div>
+        <div><img src="img/seranking-logo.svg" alt="SERanking"></div>
+        <div><img src="img/serpstat-logo.svg" alt="Serpstat"></div>
+        <div><img src="img/yandex-direct-logo.svg" alt="Яндекс Директ"></div>
+        <div><img src="img/yandex-metrika-logo.svg" alt="Яндекс Метрика"></div>
+        <div class="blue">используем множество инструментов</div>
+        <div><img src="img/figma-logo.svg" alt="Figma"></div>
+        <div><img src="img/google-ads-logo.svg" alt="Google Ads"></div>
+        <div><img src="img/google-analytics-logo.svg" alt="Google Analytics"></div>
+        <div><img src="img/key-collector-logo.svg" alt="Key Collector"></div>
+        <div><img src="img/roistat-logo.svg" alt="Roistat"></div>
+        <div><img src="img/seranking-logo.svg" alt="SERanking"></div>
+        <div><img src="img/serpstat-logo.svg" alt="Serpstat"></div>
+        <div><img src="img/yandex-direct-logo.svg" alt="Яндекс Директ"></div>
+        <div><img src="img/yandex-metrika-logo.svg" alt="Яндекс Метрика"></div>
+      </div>
+    </section>
+
+    <!-- Слайдер услуг -->
+    <section class="services">
+      <div class="services__container">
+        <div class="services-title">
+          <h1>Услуги</h1>
+          <p>Мы оказываем комплекс различных услуг и предоставляем широкий выбор пактов - от разовых  до полного сопровождения группы проектов по всем направлениям.</p>
+        </div>
+      
+        <!-- Навигационные кнопки -->
+        <div class="services-nav swiper-buttons-container">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="services-list__container">
+          <div class="services-list swiper-wrapper">
+            <div class="services-list__item swiper-slide">
+              <div class="services-list__heading">
+                <div class="services-list__title-container">
+                  <h2 class="services-list__title">Контекст</h2>
+                  <a href="#" class="services-list__link">на страницу</a>
+                </div>
+                <div class="services-list__details">
+                  <span class="services-list__price blue">от 85 000 ₽</span>
+                </div>
+              </div>
+              <ul class="services-sublist">
+                <li>Поисковые кампании в Директе и Google Ads</li>
+                <li>Кампании в РСЯ и КМС</li>
+                <li>Ретаргетинг и ремаркетинг</li>
+                <li>Видеореклама в YouTube и на площадках Яндекса и Google</li>
+                <li>Реклама в Google Merchant Center</li>
+                <li>Кампании с оплатой за конверсию</li>
+              </ul>
+            </div>
+            <div class="services-list__item swiper-slide">
+              <div class="services-list__heading">
+                <div class="services-list__title-container">
+                  <h2 class="services-list__title">Таргет</h2>
+                  <a href="#" class="services-list__link">на страницу</a>
+                </div>
+                <div class="services-list__details">
+                  <span class="services-list__price blue">от 85 000 ₽</span>
+                </div>
+              </div>
+              <ul class="services-sublist">
+                <li>Аудит проекта и разработка медиаплана</li>
+                <li>Кампании в ВКонтакте и myTarget</li>
+                <li>Привлечение трафика на сайт или в группу социальной сети</li>
+                <li>Кампании Lead Ads для сбора заявок прямо в соцсетях</li>
+                <li>Настройка чат-бота в ВК для увеличении конверсии группы</li>
+              </ul>
+            </div>
+            <div class="services-list__item swiper-slide">
+              <div class="services-list__heading">
+                <div class="services-list__title-container">
+                  <h2 class="services-list__title">SEO</h2>
+                  <a href="#" class="services-list__link">на страницу</a>
+                </div>
+                <div class="services-list__details">
+                  <span class="services-list__price blue">от 85 000 ₽</span>
+                </div>
+              </div>
+              <ul class="services-sublist">
+                <li>Ежемесячное планирование работ</li>
+                <li>Внутренняя и внешняя оптимизация</li>
+                <li>Ежедневный мониторинг позиций</li>
+                <li>Работа с репутацией</li>
+                <li>Ежемесячный отчет о результатах</li>
+              </ul>
+            </div>
+            <div class="services-list__item swiper-slide">
+              <div class="services-list__heading">
+                <div class="services-list__title-container">
+                  <h2 class="services-list__title">Разработка</h2>
+                  <a href="#" class="services-list__link">на страницу</a>
+                </div>
+                <div class="services-list__details">
+                  <span class="services-list__price blue">от 85 000 ₽</span>
+                </div>
+              </div>
+              <ul class="services-sublist">
+                <li>Технические доработки сайта для повышения конверсии</li>
+                <li>Создание продающей структуры и прототипирование</li>
+                <li>Разработка одностраничных и многостраничных сайтов</li>
+                <li>Разработка дизайн-макетов</li>
+                <li>Перенос существующих сайтов и настройка различных CMS</li>
+              </ul>
+            </div>
+            <div class="services-list__item swiper-slide">
+              <div class="services-list__heading">
+                <div class="services-list__title-container">
+                  <h2 class="services-list__title">Веб-аналитика</h2>
+                  <a href="#" class="services-list__link">на страницу</a>
+                </div>
+                <div class="services-list__details">
+                  <span class="services-list__price blue">от 85 000 ₽</span>
+                </div>
+              </div>
+              <ul class="services-sublist">
+                <li>Аудит рекламных каналов Яндекс, Google, VK, MyTarget</li>
+                <li>SEO аудит и аудит репутации компании в поисковиках</li>
+                <li>Аудит юзабилити с техническим заданием для программиста</li>
+                <li>Настройка Яндекс.Метрики и Google Analytics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Второй бесконечный блок -->
+    <section class="tools">
+      <div class="tools-inline">
+        <div class="blue">создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+        <div>создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+        <div class="blue">создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+        <div>создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+        <div class="blue">создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+        <div>создаем с нуля</div>
+        <div>стратегии</div>
+        <div>кампании</div>
+        <div>медиапланы</div>
+        <div>интеграции</div>
+        <div>ux</div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const swiper = new Swiper('.services-list__container', {
+        slidesPerView: 1,
+        loop: false,
+        spaceBetween: 24,
+        grabCursor: true,
+        slideToClickedSlide: true,
+        navigation: {
+          nextEl: '.services .swiper-button-next',
+          prevEl: '.services .swiper-button-prev',
+        },
+      });
+    });
+  </script>
+</body>
+</html>
